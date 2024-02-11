@@ -1,8 +1,18 @@
 #include "node.h"
 #include"stddef.h"
-Node  Node_Create(EN_NODE_DataType type,Node * nextptrArg,NodeData dataArg){
+#include"stdio.h"
+#include"stdlib.h"
+#include"string.h"
+Node  Node_Create(EN_NODE_DataType type,Node * nextptrArg,NodeData* dataArg){
 
-    Node n={.nodetype=type,.nextptr=nextptrArg,.data=dataArg};
+    printf("the parameterssssssssssssssssss i got %s \n",dataArg->emp.jobtitle);
+    Node n={.nodetype=type,.nextptr=nextptrArg};
+    n.data.emp.age=dataArg->emp.age;
+    n.data.emp.jobtitle=malloc(strlen(dataArg->emp.jobtitle)+1);
+    n.data.emp.name=malloc(strlen(dataArg->emp.name)+1);
+    strcpy(n.data.emp.name,dataArg->emp.name);
+    strcpy(n.data.emp.jobtitle,dataArg->emp.jobtitle);
+    printf("the trial name %s \n the trial job title %s \n",n.data.emp.name,n.data.emp.jobtitle);
     return n;
 }
 
@@ -60,5 +70,5 @@ void * Node_GetData(Node * n,uint8_t choice){
             return NULL;
         }
     }
-
+    return NULL;
 }

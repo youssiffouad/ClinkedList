@@ -1,36 +1,48 @@
 # depslib dependency file v1.0
-1707588232 source:d:\projects\employeetrial\employeepayload\employeenode.c
+1707679547 source:d:\projects\employeetrial\employeepayload\employeenode.c
 	"employeeNode.h"
 	"../Node/node.h"
+	"string.h"
+	"stdio.h"
+	"stdlib.h"
 
-1707304239 d:\projects\employeetrial\employeepayload\employeenode.h
+1707670141 d:\projects\employeetrial\employeepayload\employeenode.h
 	"stdint-gcc.h"
 
-1707588267 d:\projects\employeetrial\node\node.h
+1707683996 d:\projects\employeetrial\node\node.h
 	"../EmployeePayload/employeeNode.h"
 	<stdint-gcc.h>
 
-1707583014 source:d:\projects\employeetrial\linkedlist\linkedlist.c
+1707670293 source:d:\projects\employeetrial\linkedlist\linkedlist.c
 	"linkedlist.h"
 	"stddef.h"
+	"stdio.h"
 
 1707588256 d:\projects\employeetrial\linkedlist\linkedlist.h
 	"../Node/node.h"
 
-1707581774 source:d:\projects\employeetrial\node\node.c
+1707684548 source:d:\projects\employeetrial\node\node.c
 	"node.h"
 	"stddef.h"
+	"stdio.h"
+	"stdlib.h"
+	"string.h"
 
-1707588297 source:d:\projects\employeetrial\tests\testemplinkedlist.c
+1707684271 source:d:\projects\employeetrial\tests\testemplinkedlist.c
 	"../EmployeePayload/employeeNode.h"
 	"../Node/node.h"
 	"../linkedlist/linkedlist.h"
 	"stddef.h"
+	"stdio.h"
+	"string.h"
+	"stdlib.h"
 
-1707588346 source:d:\projects\employeetrial\tests\testempnode.c
+1707684042 source:d:\projects\employeetrial\tests\testempnode.c
 	"../EmployeePayload/employeeNode.h"
 	"stddef.h"
 	"../Node/node.h"
+	"stdio.h"
 
-1707593853 source:d:\projects\employeetrial\employeev1\main.c
+1707675339 source:d:\projects\employeetrial\employeev1\main.c
+	"stdio.h"
 

@@ -20,13 +20,13 @@ typedef union {
 
 } NodeData;
 
-typedef struct{
+typedef struct Node{
 const EN_NODE_DataType nodetype;
 NodeData data;
 struct Node * nextptr;
 } Node;
 
-Node  Node_Create(EN_NODE_DataType ,Node * ,NodeData );
+Node  Node_Create(EN_NODE_DataType ,Node * ,NodeData *);
 
 void Node_Copy(Node *,Node *);
 

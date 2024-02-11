@@ -15,7 +15,7 @@ typedef enum{
 
 Employee Employee_create(char*, uint8_t,char*);
 
-Employee Employee_print(Employee *);
+void Employee_print(Employee *);
 
 char * Employee_getName(Employee *);
 

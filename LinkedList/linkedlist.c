@@ -1,5 +1,6 @@
 #include "linkedlist.h"
 #include"stddef.h"
+#include"stdio.h"
 
 
 
@@ -29,6 +30,7 @@ else{
 
 newNode->nextptr=NULL;
 l->noOfNodes++;
+return LINKEDLIST_SUCCESS;
 }
 
 EN_LINKEDLIST_STATE LinkedList_view(LinkedList *l){
@@ -39,10 +41,11 @@ EN_LINKEDLIST_STATE LinkedList_view(LinkedList *l){
     Node * iterator=l->first;
     uint8_t counter=0;
     while(iterator !=NULL){
-        Node_print(&iterator);
+        Node_print(iterator);
         iterator=iterator->nextptr;
         counter++;
     }
+    return LINKEDLIST_SUCCESS;
 }
 
 uint8_t LinkedList_getNoOfNodes(LinkedList * l){
@@ -117,6 +120,7 @@ EN_LINKEDLIST_STATE LinkedList_deleteItemByIndex(LinkedList * L,uint8_t index){
             L->last=iteratortrail;
         }
         L->noOfNodes--;
+        return LINKEDLIST_SUCCESS;
 
 }
 

@@ -1,18 +1,25 @@
 #include"employeeNode.h"
 #include"../Node/node.h"
+#include"string.h"
+#include"stdio.h"
+#include"stdlib.h"
 Employee Employee_create(char* argname, uint8_t argage,char* argjobtitle){
     Employee e;
+    e.name = malloc(strlen(argname) + 1);
     e.age=argage;
     strcpy(e.name,argname);
+    e.jobtitle=malloc(strlen(argjobtitle)+1);
     strcpy(e.jobtitle,argjobtitle);
+
     return e;
 }
 
-Employee Employee_print(Employee *p){
+void Employee_print(Employee *p){
     printf("here is the employee data: \n ");
     printf("the employee name : %s \n",p->name);
     printf("the employee age : %i \n",p->age);
     printf("the employee job title : %s \n",p->jobtitle);
+
 }
 
 char * Employee_getName(Employee *e){
