@@ -27,9 +27,11 @@ LinkedList LinkedList_Create();
 
 EN_LINKEDLIST_STATE LinkedList_view(LinkedList *);
 
-EN_LINKEDLIST_STATE LinkedList_updateItemByIndex(LinkedList *,uint8_t ,Node *);
+EN_LINKEDLIST_STATE LinkedList_updateItemByIndex(LinkedList *,uint8_t ,uint8_t,uint8_t,char *);
 
 EN_LINKEDLIST_STATE LinkedList_deleteItemByIndex(LinkedList *,uint8_t);
+
+EN_LINKEDLIST_STATE LinkedList_viewItemByIndex(LinkedList *,uint8_t);
 
 
 //the 3rd argument is for field choice (send it with any no if the node is just a number)

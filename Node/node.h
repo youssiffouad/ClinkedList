@@ -2,6 +2,7 @@
 #define NODE_H_INCLUDED
 #include"../EmployeePayload/employeeNode.h"
 #include<stdint-gcc.h>
+
 typedef enum{
     smallNo,
     largeNo,
@@ -33,6 +34,9 @@ void Node_Copy(Node *,Node *);
 void * Node_GetData(Node *,uint8_t);
 
 EN_NODE_STATE Node_print(Node *);
+
+
+EN_NODE_STATE Node_ModifyData(Node * ,uint8_t ,uint8_t , char * );
 
 
 #endif // NODE_H_INCLUDED

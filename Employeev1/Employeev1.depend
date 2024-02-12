@@ -46,3 +46,64 @@
 1707675339 source:d:\projects\employeetrial\employeev1\main.c
 	"stdio.h"
 
+1707732170 source:e:\ctrials\clinkedlist\employeepayload\employeenode.c
+	"employeeNode.h"
+	"../Node/node.h"
+	"string.h"
+	"stdio.h"
+	"stdlib.h"
+
+1707736997 e:\ctrials\clinkedlist\employeepayload\employeenode.h
+	"stdint-gcc.h"
+
+1707735713 e:\ctrials\clinkedlist\node\node.h
+	"../EmployeePayload/employeeNode.h"
+	<stdint-gcc.h>
+
+1707738605 source:e:\ctrials\clinkedlist\linkedlist\linkedlist.c
+	"linkedlist.h"
+	"stddef.h"
+	"stdio.h"
+
+1707736462 e:\ctrials\clinkedlist\linkedlist\linkedlist.h
+	"../Node/node.h"
+
+1707735650 source:e:\ctrials\clinkedlist\node\node.c
+	"node.h"
+	"stddef.h"
+	"stdio.h"
+	"stdlib.h"
+	"string.h"
+
+1707723939 source:e:\ctrials\clinkedlist\tests\testempnode.c
+	"../EmployeePayload/employeeNode.h"
+	"stddef.h"
+	"../Node/node.h"
+	"stdio.h"
+
+1707740738 source:e:\ctrials\clinkedlist\employeev1\main.c
+	"stdio.h"
+	"Menus.h"
+
+1707738934 source:e:\ctrials\clinkedlist\tests\testemplinkedlist.c
+	"../EmployeePayload/employeeNode.h"
+	"../Node/node.h"
+	"../linkedlist/linkedlist.h"
+	"stddef.h"
+	"stdio.h"
+	"string.h"
+	"stdlib.h"
+
+1707740929 source:e:\ctrials\clinkedlist\employeev1\menus.c
+	"Menus.h"
+	"stdint-gcc.h"
+	"stdio.h"
+	"../Node/node.h"
+	"../LinkedList/linkedlist.h"
+	"stdlib.h"
+	"string.h"
+
+1707740615 e:\ctrials\clinkedlist\employeev1\menus.h
+	"../Node/node.h"
+	"../LinkedList/linkedlist.h"
+

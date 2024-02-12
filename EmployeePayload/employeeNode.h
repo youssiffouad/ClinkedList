@@ -8,7 +8,7 @@ typedef struct{
 } Employee;
 
 typedef enum{
-    EMP_NAME,
+    EMP_NAME=1,
     EMP_AGE,
     EMP_JOBTITLE,
 } EN_EMPLOYEE_ATTRIBUTES;

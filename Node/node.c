@@ -5,25 +5,30 @@
 #include"string.h"
 Node  Node_Create(EN_NODE_DataType type,Node * nextptrArg,NodeData* dataArg){
 
-    printf("the parameterssssssssssssssssss i got %s \n",dataArg->emp.jobtitle);
+
     Node n={.nodetype=type,.nextptr=nextptrArg};
     n.data.emp.age=dataArg->emp.age;
     n.data.emp.jobtitle=malloc(strlen(dataArg->emp.jobtitle)+1);
     n.data.emp.name=malloc(strlen(dataArg->emp.name)+1);
     strcpy(n.data.emp.name,dataArg->emp.name);
     strcpy(n.data.emp.jobtitle,dataArg->emp.jobtitle);
-    printf("the trial name %s \n the trial job title %s \n",n.data.emp.name,n.data.emp.jobtitle);
+
     return n;
 }
 
 EN_NODE_STATE Node_print(Node * n){
+    printf("i cam here \n");
     if(n==NULL){
+        printf("sent null pointer to node \n");
         return NODE_SENT_NULL_PTR;
+
     }
     if(n->nodetype==smallNo){
+        printf("i cam here small no \n");
         printf("the node is of type smallno and equals %i \n ", n->data.smallValue);
     }
     else if(n->nodetype==employee){
+        printf("i cam here employee \n");
         printf("the node is of type employee and here is the data \n");
         Employee_print(&(n->data.emp));
     }
@@ -72,3 +77,69 @@ void * Node_GetData(Node * n,uint8_t choice){
     }
     return NULL;
 }
+
+EN_NODE_STATE Node_ModifyData(Node * n,uint8_t choice,uint8_t Argnumber, char * Argstring){
+    if(n==NULL){
+        return NODE_SENT_NULL_PTR;
+    }
+    if(n->nodetype==smallNo){
+       //call modify fn of small NO (ÈÏá ãÇ ÊßÊÈåÇ åäÇ æ ÊÚãá ÒÍãÉ)
+
+    }
+
+    if(n->nodetype==employee){
+
+        switch(choice){
+        case EMP_NAME:{
+           strcpy(n->data.emp.name,Argstring);
+           break;
+        }
+
+
+        case EMP_AGE:{
+           n->data.emp.age=Argnumber;
+           break;
+        }
+
+
+        case EMP_JOBTITLE:{
+            n->data.emp.jobtitle=Argstring;
+            break;
+        }
+
+
+        default:
+            break;
+        }
+    }
+    return NODE_SUCCESS;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
