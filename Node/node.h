@@ -22,12 +22,16 @@ typedef union {
 } NodeData;
 
 typedef struct Node{
-const EN_NODE_DataType nodetype;
+EN_NODE_DataType nodetype;
 NodeData data;
 struct Node * nextptr;
 } Node;
 
 Node  Node_Create(EN_NODE_DataType ,Node * ,NodeData *);
+
+EN_NODE_STATE Node_CreateFromUser(Node *);
+
+Node * Node_CreateDynamic(EN_NODE_DataType ,Node * ,NodeData* );
 
 void Node_Copy(Node *,Node *);
 

@@ -5,7 +5,7 @@
 #include"string.h"
 Node  Node_Create(EN_NODE_DataType type,Node * nextptrArg,NodeData* dataArg){
 
-
+//if type == employee
     Node n={.nodetype=type,.nextptr=nextptrArg};
     n.data.emp.age=dataArg->emp.age;
     n.data.emp.jobtitle=malloc(strlen(dataArg->emp.jobtitle)+1);
@@ -16,8 +16,47 @@ Node  Node_Create(EN_NODE_DataType type,Node * nextptrArg,NodeData* dataArg){
     return n;
 }
 
+EN_NODE_STATE Node_CreateFromUser(Node *n){
+    if(n==NULL){
+        return NODE_SENT_NULL_PTR;
+    }
+    //if type == employee
+
+    n->nextptr=NULL;
+    fflush(stdin);
+    printf("enter employee name \n");
+    n->data.emp.name=malloc(15);
+    gets(n->data.emp.name);
+    printf("please enter employee age \n");
+    scanf("%i",&(n->data.emp.age));
+    fflush(stdin);
+    printf("please enter employee job title \n ");
+    n->data.emp.jobtitle=malloc(15);
+    gets(n->data.emp.jobtitle);
+    printf(" I FINISHEDDDDDDD \n");
+    return NODE_SUCCESS;
+}
+Node * Node_CreateDynamic(EN_NODE_DataType Argtype,Node *ArgNextPtr ,NodeData* dataArg){
+
+    Node * dynamicNode=malloc(sizeof(Node));
+    dynamicNode->nodetype=Argtype;
+    dynamicNode->nextptr=ArgNextPtr;
+    dynamicNode->data.emp.age=dataArg->emp.age;
+     printf("i arrived here 1 \n");
+    dynamicNode->data.emp.jobtitle=malloc(strlen(dataArg->emp.jobtitle)+1);
+    dynamicNode->data.emp.name=malloc(strlen(dataArg->emp.name)+1);
+    strcpy(dynamicNode->data.emp.name,dataArg->emp.name);
+      printf("i arrived here 2 \n");
+      printf("here is the employee name %s \n ",dynamicNode->data.emp.name);
+    strcpy(dynamicNode->data.emp.jobtitle,dataArg->emp.jobtitle);
+      printf("i arrived here 3 \n");
+
+    return dynamicNode;
+}
+
 EN_NODE_STATE Node_print(Node * n){
     printf("i cam here \n");
+    printf("%p",n);
     if(n==NULL){
         printf("sent null pointer to node \n");
         return NODE_SENT_NULL_PTR;
@@ -31,6 +70,10 @@ EN_NODE_STATE Node_print(Node * n){
         printf("i cam here employee \n");
         printf("the node is of type employee and here is the data \n");
         Employee_print(&(n->data.emp));
+    }
+    else{
+
+        printf("other case taaaaaaaaaaannnnnnnnya \n");
     }
 
     return NODE_SUCCESS;

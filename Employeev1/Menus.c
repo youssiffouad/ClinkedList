@@ -22,11 +22,8 @@ while(1){
     switch (choice){
         case 1:{
           NodeData d= Form_NewEmployee();
-          printf("i survived \n");
-          Node n=Node_Create(employee,NULL,&d);
-          printf("i survived *2 \n");
+          Node* n=Node_CreateDynamic(employee,NULL,&d);
           LinkedList_InsertNode(&l,&n);
-          printf("i survived *3 \n");
           break;
         }
         case 2 :{
