@@ -7,7 +7,7 @@ void Menu_main();
 NodeData Form_NewEmployee();
 
 NodeData Form_NewEmployee();
-uint8_t  INPUT_GetIndex();
+int  INPUT_GetIndex();
 uint8_t INPUT_FieldName();
 
 

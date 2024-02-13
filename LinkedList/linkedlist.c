@@ -1,6 +1,7 @@
 #include "linkedlist.h"
 #include"stddef.h"
 #include"stdio.h"
+#include"stdlib.h"
 
 
 
@@ -19,6 +20,7 @@ EN_LINKEDLIST_STATE LinkedList_InsertNode(LinkedList *l,Node * newNode){
         return LINKEDLIST_SENT_NULL_PTRToNODE;
     }
     if(l->first==NULL){
+        printf("NO PREVIOUS NODES EXISTINGGGGGGGGGGGGGGGGGGGGGGGGGGG____________________________ \n");
         l->first=newNode;
         l->last=newNode;
         printf("here is the first of the linked list %p \n",l->first);
@@ -36,9 +38,13 @@ EN_LINKEDLIST_STATE LinkedList_InsertNode(LinkedList *l,Node * newNode){
 
 EN_LINKEDLIST_STATE LinkedList_view(LinkedList *l){
      if(l ==NULL){
+
         return LINKEDLIST_SENT_NULL_POINTER;
     }
-    printf("here is the first of the linked list %p \n",l->first);
+
+    if(l->first==NULL){
+        printf("HOW COME THIS ALWAYS HAPPENS?!!!!! \t THE NODE INSERTED BECOMES POINTING TO NULL \n");
+    }
     Node * iterator=l->first;
     uint8_t counter=1;
 
@@ -107,6 +113,7 @@ EN_LINKEDLIST_STATE LinkedList_deleteItemByIndex(LinkedList * L,uint8_t index){
                 iteratortrail=iteratortrail->nextptr;
             }
             iteratortrail->nextptr=iterator->nextptr;
+            free(iterator);
         }
         if(index== L->noOfNodes){
             L->last=iteratortrail;
@@ -136,10 +143,14 @@ void * LinkedList_getField(LinkedList * l,uint8_t index,uint8_t choice){
 }
 
 EN_LINKEDLIST_STATE LinkedList_viewItemByIndex(LinkedList *l,uint8_t index){
+    printf("i arrived in viewByIndex \n");
     if(l==NULL){
+
         return LINKEDLIST_SENT_NULL_POINTER;
     }
-    if(index >l->noOfNodes){
+    if(index > l->noOfNodes){
+            printf("here is the index %i \n",index);
+    printf("here is the no of nodes %i \n",l->noOfNodes);
         return LINKEDLIST_INDX_GT_SIZE;
     }
     int counter=1;

@@ -8,9 +8,11 @@
 void Menu_main(){
        LinkedList l= LinkedList_Create();
 while(1){
+//printf("\n I AM IN THE BEGININNG OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
+//Node * reserve=l.first;
+//printf("\n I AM IN THE BEGININNG OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
 
-
-    uint8_t choice;
+    int choice;
     printf("--------------WELCOME TO THE EMOLYEE PROGRAM---------------- \n");
     printf("please select from the options below \n");
     printf("1--->insert new employee \n");
@@ -18,26 +20,35 @@ while(1){
     printf("3--->delete  employee \n");
     printf("4--->modify data of certain  employee by index \n");
     printf("5--->display all existing employees \n");
+    //printf("\n I AM IN THE BEGININNG OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
     scanf("%i",&choice);
+
+    //l.first=reserve;
+    //printf("\n I AM JUST AFTER THE BEGIN OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p  %p\n",l.first,reserve);
     switch (choice){
         case 1:{
-          NodeData d= Form_NewEmployee();
+           //printf("\n I AM AFTER THE BEGIN OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
+           NodeData d= Form_NewEmployee();
+          // printf("\n I AM BEFORE THE MIDDLE OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
           Node* n=Node_CreateDynamic(employee,NULL,&d);
-          LinkedList_InsertNode(&l,&n);
+   // printf("\n I AM IN THE MIDDLE OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
+          LinkedList_InsertNode(&l,n);
           break;
         }
         case 2 :{
-            uint8_t index=INPUT_GetIndex();
-            LinkedList_viewItemByIndex( &l,index);
+
+            int index=INPUT_GetIndex();
+            printf("before the call of the function \n");
+            printf("here is the response code %i /n",LinkedList_viewItemByIndex( &l,index));
             break;
         }
         case 3 :{
-            uint8_t index=INPUT_GetIndex();
+            int index=INPUT_GetIndex();
             LinkedList_deleteItemByIndex(&l,index);
             break;
         }
         case 4 :{
-           uint8_t index= INPUT_GetIndex();
+           int index= INPUT_GetIndex();
            uint8_t field=INPUT_FieldName();
            switch (field){
                case 2:{
@@ -99,10 +110,12 @@ NodeData Form_NewEmployee(){
     return d;
 }
 
-uint8_t  INPUT_GetIndex(){
-    uint8_t index;
+int  INPUT_GetIndex(){
+    int index;
     printf("please enter the index \n");
+    fflush(stdin);
     scanf("%i",&index);
+    printf("after the scanf \n");
     return index;
 
 }
