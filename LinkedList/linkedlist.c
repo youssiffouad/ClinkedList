@@ -76,7 +76,7 @@ EN_LINKEDLIST_STATE LinkedList_updateItemByIndex(LinkedList * L,uint8_t index,ui
     while(counter<index){
         iterator=iterator->nextptr;
     }
-    return Node_ModifyData(iterator,field,newValNumber,newValString);
+     Node_ModifyData(iterator,field,newValNumber,newValString);
 
     return LINKEDLIST_SUCCESS;
 
@@ -145,19 +145,23 @@ void * LinkedList_getField(LinkedList * l,uint8_t index,uint8_t choice){
 EN_LINKEDLIST_STATE LinkedList_viewItemByIndex(LinkedList *l,uint8_t index){
     printf("i arrived in viewByIndex \n");
     if(l==NULL){
-
+        printf("the sent linked list is pointing to null \n");
         return LINKEDLIST_SENT_NULL_POINTER;
     }
     if(index > l->noOfNodes){
             printf("here is the index %i \n",index);
-    printf("here is the no of nodes %i \n",l->noOfNodes);
-        return LINKEDLIST_INDX_GT_SIZE;
+            printf("here is the no of nodes %i \n",l->noOfNodes);
+            return LINKEDLIST_INDX_GT_SIZE;
     }
+    printf("here is the index %i \n",index);
     int counter=1;
     Node * iterator=l->first;
     while(counter != index){
-        iterator=iterator->nextptr;
+            printf("i am inside the loop and here is the iterator %p \n and iterator->next %p \n",iterator,iterator->nextptr);
+            iterator=iterator->nextptr;
+            counter++;
     }
+    printf("i am outside the loop \n");
     Node_print(iterator);
     return LINKEDLIST_SUCCESS;
 }

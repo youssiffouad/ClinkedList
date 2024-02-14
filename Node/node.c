@@ -55,7 +55,7 @@ Node * Node_CreateDynamic(EN_NODE_DataType Argtype,Node *ArgNextPtr ,NodeData* d
 }
 
 EN_NODE_STATE Node_print(Node * n){
-    //printf("i cam here \n");
+    printf("i cam here \n");
     printf("%p",n);
     if(n==NULL){
         printf("sent null pointer to node \n");
@@ -63,11 +63,11 @@ EN_NODE_STATE Node_print(Node * n){
 
     }
     if(n->nodetype==smallNo){
-        //printf("i cam here small no \n");
+        printf("i cam here small no \n");
         printf("the node is of type smallno and equals %i \n ", n->data.smallValue);
     }
     else if(n->nodetype==employee){
-       // printf("i cam here employee \n");
+        printf("i cam here employee \n");
         printf("the node is of type employee and here is the data \n");
         Employee_print(&(n->data.emp));
     }

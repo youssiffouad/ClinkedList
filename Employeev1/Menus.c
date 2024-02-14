@@ -20,6 +20,7 @@ while(1){
     printf("3--->delete  employee \n");
     printf("4--->modify data of certain  employee by index \n");
     printf("5--->display all existing employees \n");
+    fflush(stdin);
     //printf("\n I AM IN THE BEGININNG OF THE FUNCTION AND HERE IS THE ADDRESS OF THE FIRST NODE________>>> %p \n",l.first);
     scanf("%i",&choice);
 
@@ -49,7 +50,8 @@ while(1){
         }
         case 4 :{
            int index= INPUT_GetIndex();
-           uint8_t field=INPUT_FieldName();
+           int field=INPUT_FieldName();
+           fflush(stdin);
            switch (field){
                case 2:{
                    uint8_t age;
@@ -120,8 +122,8 @@ int  INPUT_GetIndex(){
 
 }
 
-uint8_t INPUT_FieldName(){
-    uint8_t selection;
+int INPUT_FieldName(){
+    int selection;
     printf("please select the field to be modified \n");
     printf("   1--edit name \n");
     printf("   2--edit age \n");

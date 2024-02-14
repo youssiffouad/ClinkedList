@@ -8,7 +8,7 @@ NodeData Form_NewEmployee();
 
 NodeData Form_NewEmployee();
 int  INPUT_GetIndex();
-uint8_t INPUT_FieldName();
+int INPUT_FieldName();
 
 
 #endif // MENUS_H_INCLUDED
